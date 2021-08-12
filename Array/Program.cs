@@ -1,42 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Array
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Enter size of array :");
+
             //taking the array size from user
-            string X = Console.ReadLine();
-            int sizeOfArray = Int32.Parse(X);
+            
+            int sizeOfArray = int.Parse(Console.ReadLine());
             int[] array = new int[sizeOfArray];
 
             //taking the array from user
             Console.WriteLine("Enter the elements of array :");
+
             for (int traverser = 0; traverser < sizeOfArray; traverser++)
             {
                 string elementsOfArray = Console.ReadLine();
-                array[traverser] = Int32.Parse(elementsOfArray);
+                array[traverser] = int.Parse(elementsOfArray);
              }
 
             Console.WriteLine("Enter an element to be searched in array :");
-            string arrayElementFromUser = Console.ReadLine();
-            int elementFromUser = Int32.Parse(arrayElementFromUser);
+
+            int elementToSearch = int.Parse(Console.ReadLine());
 
             //Linear search in Array
-            for(int searchElementInArray=0; searchElementInArray < array.Length; searchElementInArray++)
+            for(int i=0; i < sizeOfArray; i++)
             {
-                if(array[searchElementInArray] == elementFromUser)
+                if(array[i] == elementToSearch)
                 {
-                    Console.WriteLine($"The given element is {elementFromUser} and is in {searchElementInArray + 1} position");
+                    Console.WriteLine($"The given element is {elementToSearch} and is in {i + 1} position");
                 }
             }
-         Console.ReadLine();
+
+         Console.ReadLine();  //element is not found in given array try another element
          }
     }
 }
+//write new private method 'linear search' and call it from main method
