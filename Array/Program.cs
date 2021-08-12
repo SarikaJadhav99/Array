@@ -13,31 +13,30 @@ namespace Array
             Console.WriteLine("Enter size of array :");
             //taking the array size from user
             string X = Console.ReadLine();
-            
             int sizeOfArray = Int32.Parse(X);
             int[] array = new int[sizeOfArray];
 
             //taking the array from user
-            Console.WriteLine("Enter elements of array :");
-            for (int i = 0; i < sizeOfArray; i++)
+            Console.WriteLine("Enter the elements of array :");
+            for (int traverser = 0; traverser < sizeOfArray; traverser++)
             {
-                string str = Console.ReadLine();
-                array[i] = Int32.Parse(str);
+                string elementsOfArray = Console.ReadLine();
+                array[traverser] = Int32.Parse(elementsOfArray);
+             }
 
-            }
-            //string A = Console.ReadLine
-            Console.WriteLine("Enter given elements to be searched in array :");
-            int GivenElement = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter an element to be searched in array :");
+            string arrayElementFromUser = Console.ReadLine();
+            int elementFromUser = Int32.Parse(arrayElementFromUser);
 
-            for(int j=0; j< array.Length; j++)
+            //Linear search in Array
+            for(int searchElementInArray=0; searchElementInArray < array.Length; searchElementInArray++)
             {
-                if(array[j]==GivenElement)
+                if(array[searchElementInArray] == elementFromUser)
                 {
-                    Console.WriteLine($"The given element is {GivenElement} and is in {j + 1} position");
+                    Console.WriteLine($"The given element is {elementFromUser} and is in {searchElementInArray + 1} position");
                 }
             }
-            Console.ReadLine();
-           
-        }
+         Console.ReadLine();
+         }
     }
 }
